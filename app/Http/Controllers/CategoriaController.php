@@ -41,4 +41,10 @@ class CategoriaController extends Controller
         $query=DB::update("update categoria set nombre_categoria='$nombre_categoria', eliminado='$eliminado' where id_categoria=?",[$id_categoria]);
         return redirect()->action('CategoriaController@categorias_mostrar')->withInput();
 	}
+    
+     public function Admin_restaurante()
+	{
+		
+		return view('/Administrador/index');
+    }
 }

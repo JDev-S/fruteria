@@ -58,6 +58,7 @@
     <script src="\catalog\view\javascript\jquery\webiquickview.js" type="text/javascript"></script>
     <script src="\catalog\view\javascript\jquery\webinewsletter.js" type="text/javascript"></script>
     <script src="\catalog\view\javascript\common.js" type="text/javascript"></script>
+    @yield('scripts')
     <link href="index.htm" rel="canonical">
     <link href="\image\catalog\favicon.png" rel="icon">
 </head>
@@ -701,7 +702,7 @@
                                                 Inicio</a></li>
 
 
-                                        <li class="m-menu"><a href="/tienda" class="bmenu">
+                                        <li class="m-menu"><a href="/tienda/1" class="bmenu">
                                                 Tienda</a></li>
 
 
@@ -712,7 +713,7 @@
                                                 <div class="dropdown-inner">
                                                     <ul class="list-unstyled">
 
-                                                        <li class="dropdown-submenu"> <a href="/tienda" class="submenu-title">Categorias </a>
+                                                        <li class="dropdown-submenu"> <a  class="submenu-title">Categorias </a>
 
                                                             <ul class="list-unstyled grand-child">
                                                                 <?php
@@ -721,7 +722,7 @@
                                                                     foreach($categorias as $categoria)
                                                                     {
 
-                                                                     echo '<li> <a href="/tienda/'.$categoria->id_categoria.'">'. $categoria->nombre_categoria.' </a> </li>';
+                                                                     echo '<li> <a href="/tienda/1/'.$categoria->id_categoria.'">'. $categoria->nombre_categoria.' </a> </li>';
                                                                      
                                                                     }
                                                                 ?>
@@ -758,7 +759,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right haccount">
                                     <li><a href="/registrarse"><i class="fa fa-user-plus"></i>Registrarse</a></li>
-                                    <li><a href="/inicar_sesion"><i class="fa fa-lock"></i>Iniciar sesion</a></li>
+                                    <li><a href="/iniciar_sesion"><i class="fa fa-lock"></i>Iniciar sesion</a></li>
                                     <li class="xsw"><a class="topbe" href="/iniciar_sesion" title="Fvoritos"><i class="fa fa-heart"></i><span>Favoritos</span></a></li>
                                 </ul>
                             </li>
@@ -886,17 +887,15 @@
                                   $categorias=DB::select($query);
                                   foreach($categorias as $categoria)
                                   {
-                                  echo '<li> <a href="/tienda/'.$categoria->id_categoria.'">'. $categoria->nombre_categoria.' </a> </li>';                                   
+                                  echo '<li> <a href="/tienda/1/'.$categoria->id_categoria.'">'. $categoria->nombre_categoria.' </a> </li>';                                   
                                  }
+                                
                                 ?>
 
 
                             </ul>
                         </div>
                     </div>
-
-
-
 
                 </div>
             </div>

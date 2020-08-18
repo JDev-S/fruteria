@@ -194,7 +194,7 @@ class UsuarioController extends Controller
 
         if($cantidad>0)
         {
-            $query2 = "select usuario.contraseña,usuario.nombre_usuario from usuario where correo='$correo'";
+            $query2 = "select usuario.contraseña,usuario.nombre_usuario from usuario where usuario.correo='$correo'";
             $data2=DB::select($query2);
 
             
@@ -205,21 +205,26 @@ class UsuarioController extends Controller
             //Session::put('contraseña',$contrasenia);
             //$correo=Session::get('nombre_usuario');
             //$pass=Session::get('contraseña');
+            Session::put('correo',$correo);
+            Session::put('contraseña',$password);
+            $correo=Session::get('correo');
+            $pass=Session::get('contraseña');
             
-           //return redirect('/Admin_clientes');
-                return view('/principal/index');
+           return redirect('/Admin_restaurante');
+                //return view('/principal/index');
                 
             }else{
-                //return redirect('/iniciar_sesion');
+            return redirect('/iniciar_sesion');
                 echo 'No es la misma contraseña del usuario';
             }   
         }
         else{
-            //return redirect('/iniciar_sesion');
-            echo 'No existe ese usuario';
+            return redirect('/iniciar_sesion');
+            //echo 'No existe ese usuario';
         }
     }
     
+
     
     public function obtener_contrasenia(Request $input)
 	{
@@ -269,6 +274,7 @@ class UsuarioController extends Controller
     public function Logout()
 	{
 		
+        
 		Session::flush();
 		return redirect('/');
 	}
