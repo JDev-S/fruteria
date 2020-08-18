@@ -5,8 +5,8 @@
 <div id="product-product" class="container">
     <ul class="breadcrumb">
         <li><a href="/"><i class="fa fa-home"></i></a></li>
-        <li><a href="/tienda">{{$info[0]->nombre_categoria}}</a></li>
-        <li><a href="/info_producto"> {{$info[0]->nombre_alimento}} </a></li>
+        <li><a href="/tienda/1/{{$info[0]->id_categoria}}">{{$info[0]->nombre_categoria}}</a></li>
+        <li><a href="/info_producto?producto={{$info[0]->id_alimento}}"> {{$info[0]->nombre_alimento}} </a></li>
     </ul>
     <div class="row">
 
@@ -23,15 +23,43 @@
                                 <li id="gallery_01" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
                                     <div class="owl-wrapper-outer">
                                         <div class="owl-wrapper" style="width: 944px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);">
-                                            <div class="owl-item" style="width: 118px;"><a data-zoom-image="/image/cache/catalog/product/27-700x800.jpg" data-image="/image/cache/catalog/product/27-700x800.jpg" href="/image/cache/catalog/product/27-700x800.jpg" class="col-xs-12">
-                                                    <img src="/image/cache/catalog/product/27-114x130.jpg" class="img-responsive center-block" alt="additional image">
-                                                </a></div>
-                                            <div class="owl-item" style="width: 118px;"><a data-zoom-image="/image/cache/catalog/product/16-700x800.jpg" data-image="/image/cache/catalog/product/16-700x800.jpg" href="/image/cache/catalog/product/16-700x800.jpg" class="col-xs-12">
-                                                    <img src="/image/cache/catalog/product/16-114x130.jpg" class="img-responsive center-block" alt="additional image">
-                                                </a></div>
-                                            <div class="owl-item" style="width: 118px;"><a data-zoom-image="/image/cache/catalog/product/18-700x800.jpg" data-image="/image/cache/catalog/product/18-700x800.jpg" href="/image/cache/catalog/product/18-700x800.jpg" class="col-xs-12">
-                                                    <img src="/image/cache/catalog/product/18-114x130.jpg" class="img-responsive center-block" alt="additional image">
-                                                </a></div>
+                                            <?php
+                                            $query = 'SELECT * FROM imagenes_de_muestra WHERE id_alimento='.$info[0]->id_alimento;
+                                            $imagenes=DB::select($query);
+                                            $i=1;
+                                           foreach($imagenes as $imagen)
+                                            {
+                                            if($i==1)
+                                            {
+                                        echo
+                                            '<div class="owl-item" style="width: 118px;">
+                                                <a data-zoom-image="'.$imagen->imagen_muestra.'" data-image="'.$imagen->imagen_muestra.'" href="'.$imagen->imagen_muestra.'" class="col-xs-12">
+                                                    <img src="'.$imagen->imagen_muestra.'" class="img-responsive center-block" alt="additional image">
+                                                </a>';
+                                                $i++;
+                                            }else
+                                            if($i>1 && $i<4)
+                                            {
+                                                echo
+                                            '
+                                                <a data-zoom-image="'.$imagen->imagen_muestra.'" data-image="'.$imagen->imagen_muestra.'" href="'.$imagen->imagen_muestra.'" class="col-xs-12">
+                                                    <img src="'.$imagen->imagen_muestra.'" class="img-responsive center-block" alt="additional image">
+                                                </a>';
+                                                $i++;
+                                            }
+                                                 else
+                                                     if($i==4)
+                    
+                                                 {
+                                                     echo'  <a data-zoom-image="'.$imagen->imagen_muestra.'" data-image="'.$imagen->imagen_muestra.'" href="'.$imagen->imagen_muestra.'" class="col-xs-12">
+                                                    <img src="'.$imagen->imagen_muestra.'" class="img-responsive center-block" alt="additional image">
+                                                </a>
+                                                </div>';
+                                                $i=1;
+                                                 }
+                                            
+                                            }
+                                        ?>
                                         </div>
                                     </div>
 
@@ -45,7 +73,7 @@
                         <h1> {{$info[0]->nombre_alimento}} </h1>
                         <hr class="producthr">
                         <ul class="list-unstyled">
-                            <li><span class="text-decor">Categoría:</span><a href="https://madebyhand.in/opencart/FS03/Fashion01/index.php?route=product/manufacturer/info&amp;manufacturer_id=7" class="textdeb">{{$info[0]->nombre_categoria}}</a></li>
+                            <li><span class="text-decor">Categoría:</span><a href="/tienda/1/{{$info[0]->id_categoria}}" class="textdeb">{{$info[0]->nombre_categoria}}</a></li>
                             <li><span class="text-decor">Disponibilidad:</span>
                                 <?php 
                                 if($info[0]->disponible==1)

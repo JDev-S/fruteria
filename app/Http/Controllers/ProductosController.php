@@ -172,14 +172,10 @@ class ProductosController extends Controller
             $id_platillo=$_GET['producto'];
         
             $info=DB::select('select * from alimentos inner join categoria on categoria.id_categoria=alimentos.id_categoria where alimentos.id_alimento='.$id_platillo);
-
-            $imagenes=DB::select('SELECT * FROM imagenes_de_muestra WHERE id_alimento= ?', [$id_platillo]);
-        
-         
         
             $especificaciones=DB::select('select * from ingredientes inner join ingrediente_alimento on ingredientes.id_ingrediente=ingrediente_alimento.id_ingrediente where ingrediente_alimento.id_alimento='.$id_platillo);
         
-        return view('/principal/info_producto',compact('info','imagenes','especificaciones'));
+        return view('/principal/info_producto',compact('info','especificaciones'));
     }
     
 

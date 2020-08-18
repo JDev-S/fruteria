@@ -643,7 +643,7 @@
                     calle,
                     cp,
                     '<button type="button"  class="btn btn-danger" data-toggle="modal" data-target="#deleteModal" data-id="' + msg + '" data-nombre="' + colonia + ' ' + calle + '"><i class="fa fa-trash"></button>' +
-                        '<button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-id="' + id_direccion + '" data-id2="' + id_usuario + '"  data-persona="' + persona_recibe + '"  data-colonia="' + colonia + '"  data-calle="' + calle + '"  data-interior="' + numero_interior + '"  data-exterior="' + numero_exterior + '"  data-cp="' + cp + '"  data-referencia="' + referencia + '"  data-ca="' + calleA + '" data-cb="' + calleB + '"  data-telefono="' + telefono + '"  data-eliminado="' + 0 + '"><i class="fa fa-pencil-alt"></button>'
+                        '<button type="button"  class="btn btn-primary" data-toggle="modal" data-target="#editModal" data-id="' + msg + '" data-id2="' + id_usuario + '"  data-persona="' + persona_recibe + '"  data-colonia="' + colonia + '"  data-calle="' + calle + '"  data-interior="' + numero_interior + '"  data-exterior="' + numero_exterior + '"  data-cp="' + cp + '"  data-referencia="' + referencia + '"  data-ca="' + calleA + '" data-cb="' + calleB + '"  data-telefono="' + telefono + '"  data-eliminado="' + 0 + '"><i class="fa fa-pencil-alt"></button>'
                 ]).draw(false);
                 $('#insertModal').modal('hide');
             }
