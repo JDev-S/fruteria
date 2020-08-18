@@ -3,17 +3,17 @@
 <div id="information-contact" class="container">
     <ul class="breadcrumb">
         <li><a href="/"><i class="fa fa-home"></i></a></li>
-        <li><a href="/contacto">Contactanos</a></li>
+        <li><a href="/contacto">Contactános</a></li>
     </ul>
     <div class="row infobg">
         <div id="content" class="col-xs-12">
-            <h1 class="heading text-center"><span>Contactanos</span><svg>
+            <h1 class="heading text-center"><span>Contactános</span><svg>
                     <use xlink:href="#headingsvg"></use>
                 </svg></h1>
             <div class="row">
 
                 <div class="col-md-4 col-xs-12 infocnt">
-                    <legend>Nuestra locacion</legend>
+                    <legend>Nuestra locación</legend>
                     <div class="">
                         <!--              <img src="https://madebyhand.in/opencart/FS03/Fashion01/image/cache/catalog/logo-268x50.png" alt="Fruitino Organic" title="Fruitino Organic" class="img-responsive" />
              -->

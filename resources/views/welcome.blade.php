@@ -739,7 +739,7 @@
                                                 Acerca de </a></li>
 
                                         <li class="m-menu"><a href="/contacto" class="bmenu">
-                                                Contactanos</a></li>
+                                                Contactános</a></li>
 
 
                                     </ul>
@@ -759,7 +759,7 @@
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-right haccount">
                                     <li><a href="/registrarse"><i class="fa fa-user-plus"></i>Registrarse</a></li>
-                                    <li><a href="/iniciar_sesion"><i class="fa fa-lock"></i>Iniciar sesion</a></li>
+                                    <li><a href="/iniciar_sesion"><i class="fa fa-lock"></i>Iniciar sesión</a></li>
                                     <li class="xsw"><a class="topbe" href="/iniciar_sesion" title="Fvoritos"><i class="fa fa-heart"></i><span>Favoritos</span></a></li>
                                 </ul>
                             </li>
@@ -799,7 +799,7 @@
                         <aside id="column-left1" class="col-xs-12">
                             <div>
                                 <div class="storeinfo">
-                                    <h5><span>Contact us</span>
+                                    <h5><span>Contacto</span>
                                         <button type="button" class="btn toggle collapsed" data-toggle="collapse" data-target="#contact"></button>
                                     </h5>
                                     <div id="contact" class="collapse footer-collapse footcontact">
@@ -849,7 +849,7 @@
                         </aside>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12 fborder">
-                        <h5>Informacion
+                        <h5>Información
                             <button type="button" class="btn toggle collapsed" data-toggle="collapse" data-target="#info"></button>
                         </h5>
                         <div id="info" class="collapse footer-collapse">
@@ -867,7 +867,7 @@
                         </h5>
                         <div id="account" class="collapse footer-collapse">
                             <ul class="list-unstyled lastb">
-                                <li><a href="/iniciar_sesion">Iniciar sesion</a></li>
+                                <li><a href="/iniciar_sesion">Iniciar sesión</a></li>
 
                                 <li><a href="/registrarse">Registrarse</a></li>
 

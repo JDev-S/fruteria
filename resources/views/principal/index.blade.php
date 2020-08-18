@@ -92,7 +92,7 @@ header('Content-Type: text/html');
                             <div class="multi-row">
                                 <div class="product-layout col-xs-12 cless">
                                     <div class="product-thumb transition">
-                                        <div class="image"><a href="/info_producto"><img src="{{$principal->fotografia_miniatura}}" alt="Healthy Lime" title="Healthy Lime" class="img-responsive center-block"></a>
+                                        <div class="image"><a href="/info_producto?producto={{$principal->id_alimento}}"><img src="{{$principal->fotografia_miniatura}}" alt="{{$principal->nombre_alimento}}" title="{{$principal->nombre_alimento}}" class="img-responsive center-block" style="height:250px; "></a>
                                             <!-- Webibazaar Images Start -->
 
                                             <!-- End -->
@@ -255,8 +255,8 @@ header('Content-Type: text/html');
                                                 <use xlink:href="#support"></use>
                                             </svg></span></li>
                                     <li class="text-left">
-                                        <h4>24 x 7 Free Support</h4>
-                                        <p>Online Support 24/7</p>
+                                        <h4>24 x 7 Soporte gratuito</h4>
+                                        <p>Soporte técnico</p>
                                     </li>
                                 </ul>
                             </div>
@@ -266,8 +266,8 @@ header('Content-Type: text/html');
                                                 <use xlink:href="#pay"></use>
                                             </svg></span></li>
                                     <li class="text-left">
-                                        <h4>Money Back Guarantee</h4>
-                                        <p>100% Secure Payment</p>
+                                        <h4>Pagos seguros</h4>
+                                        <p>Pagos por paypal y mercado pago</p>
                                     </li>
                                 </ul>
                             </div>
@@ -277,8 +277,8 @@ header('Content-Type: text/html');
                                                 <use xlink:href="#ship"></use>
                                             </svg></span></li>
                                     <li class="text-left">
-                                        <h4>Free World Shipping</h4>
-                                        <p>On Order Over $99</p>
+                                        <h4>Entregas</h4>
+                                        <p>Entregas a domicilio</p>
                                     </li>
                                 </ul>
                             </div>
@@ -288,8 +288,8 @@ header('Content-Type: text/html');
                                                 <use xlink:href="#gift"></use>
                                             </svg></span></li>
                                     <li class="text-left">
-                                        <h4>Special Gift Cards</h4>
-                                        <p>Give The Perfect Gift</p>
+                                        <h4>Precios especiales</h4>
+                                        <p>Nuestros precios son como regalos</p>
                                     </li>
                                 </ul>
                             </div>
@@ -367,7 +367,7 @@ header('Content-Type: text/html');
                         @foreach($ultimos as $ultimo)
                         <div class="product-layout col-xs-12 cless">
                             <div class="product-thumb transition">
-                                <div class="image"><a href="/info_producto?producto={{$ultimo->id_alimento}}"><img src="{{$ultimo->fotografia_miniatura}}" alt="Feijoa Fruit" title="Feijoa Fruit" class="img-responsive center-block"></a>
+                                <div class="image"><a href="/info_producto?producto={{$ultimo->id_alimento}}"><img src="{{$ultimo->fotografia_miniatura}}" alt="{{$ultimo->nombre_alimento}}" title="{{$ultimo->nombre_alimento}}" class="img-responsive center-block" style="height:250px;"></a>
                                     <!-- Webiarch Images Start -->
 
                                     <!-- Webiarch Images End -->

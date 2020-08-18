@@ -16,7 +16,7 @@
                     <div class="col-sm-6 col-lg-5 col-md-6 col-xs-12 proimg sticky">
                         <ul class="thumbnails">
                             <li><a class="thumbnail" href="{{$info[0]->fotografia_miniatura}}">
-                                    <div style="height:519px;width:455px;" class="zoomWrapper"><img data-zoom-image="{{$info[0]->fotografia_miniatura}}" src="{{$info[0]->fotografia_miniatura}}" id="zoom_03" class="img-responsive center-block" alt="image" style="position: absolute;"></div>
+                                    <div style="height:300px;width:455px;" class="zoomWrapper"><img data-zoom-image="{{$info[0]->fotografia_miniatura}}" src="{{$info[0]->fotografia_miniatura}}" id="zoom_03" class="img-responsive center-block" alt="image" style="position: absolute;"></div>
                                 </a>
                             </li>
                             <div class="row">
