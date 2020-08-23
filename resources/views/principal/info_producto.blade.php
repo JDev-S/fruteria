@@ -1,7 +1,5 @@
 @extends('welcome')
 @section('contenido')
-
-
 <div id="product-product" class="container">
     <ul class="breadcrumb">
         <li><a href="/"><i class="fa fa-home"></i></a></li>
@@ -14,59 +12,37 @@
             <div class="productbg">
                 <div class="row">
                     <div class="col-sm-6 col-lg-5 col-md-6 col-xs-12 proimg sticky">
-                        <ul class="thumbnails">
-                            <li><a class="thumbnail" href="{{$info[0]->fotografia_miniatura}}">
-                                    <div style="height:300px;width:455px;" class="zoomWrapper"><img data-zoom-image="{{$info[0]->fotografia_miniatura}}" src="{{$info[0]->fotografia_miniatura}}" id="zoom_03" class="img-responsive center-block" alt="image" style="position: absolute;"></div>
+                        <ul class="thumbnails" >
+
+                            <li><a class="thumbnail" href="{{$info[0]->fotografia_miniatura}}"  title="Fresh Avocado">
+                                    <img data-zoom-image="{{$info[0]->fotografia_miniatura}}" src="{{$info[0]->fotografia_miniatura}}" style="height:450px;" id="zoom_03" class="img-responsive center-block" alt="image">
                                 </a>
+                               
                             </li>
-                            <div class="row">
+                           
+
+                            <div class="row" >
                                 <li id="gallery_01" class="owl-carousel owl-theme" style="opacity: 1; display: block;">
                                     <div class="owl-wrapper-outer">
-                                        <div class="owl-wrapper" style="width: 944px; left: 0px; display: block; transition: all 1000ms ease 0s; transform: translate3d(0px, 0px, 0px);">
+                                        <div class="owl-wrapper" style="width: 600px; left: 0px; display: block; transform: translate3d(0px, 0px, 0px); transition: all 1000ms ease 0s;">
                                             <?php
-                                            $query = 'SELECT * FROM imagenes_de_muestra WHERE id_alimento='.$info[0]->id_alimento;
+                                             $query = 'SELECT * FROM imagenes_de_muestra WHERE id_alimento='.$info[0]->id_alimento;
                                             $imagenes=DB::select($query);
                                             $i=1;
                                            foreach($imagenes as $imagen)
                                             {
-                                            if($i==1)
-                                            {
-                                        echo
-                                            '<div class="owl-item" style="width: 118px;">
-                                                <a data-zoom-image="'.$imagen->imagen_muestra.'" data-image="'.$imagen->imagen_muestra.'" href="'.$imagen->imagen_muestra.'" class="col-xs-12">
+                                            echo'<div class="owl-item" style="width: 75px;"><a data-zoom-image="'.$imagen->imagen_muestra.'" data-image="'.$imagen->imagen_muestra.'" href="'.$imagen->imagen_muestra.'" class="col-xs-12">
                                                     <img src="'.$imagen->imagen_muestra.'" class="img-responsive center-block" alt="additional image">
-                                                </a>';
-                                                $i++;
-                                            }else
-                                            if($i>1 && $i<4)
-                                            {
-                                                echo
-                                            '
-                                                <a data-zoom-image="'.$imagen->imagen_muestra.'" data-image="'.$imagen->imagen_muestra.'" href="'.$imagen->imagen_muestra.'" class="col-xs-12">
-                                                    <img src="'.$imagen->imagen_muestra.'" class="img-responsive center-block" alt="additional image">
-                                                </a>';
-                                                $i++;
-                                            }
-                                                 else
-                                                     if($i==4)
-                    
-                                                 {
-                                                     echo'  <a data-zoom-image="'.$imagen->imagen_muestra.'" data-image="'.$imagen->imagen_muestra.'" href="'.$imagen->imagen_muestra.'" class="col-xs-12">
-                                                    <img src="'.$imagen->imagen_muestra.'" class="img-responsive center-block" alt="additional image">
-                                                </a>
-                                                </div>';
-                                                $i=1;
-                                                 }
-                                            
-                                            }
-                                        ?>
+                                                </a></div>';
+                                           }
+                                                ?>
+
                                         </div>
                                     </div>
 
-
-
                                 </li>
                             </div>
+
                         </ul>
                     </div>
                     <div class="col-lg-7 col-md-6 col-xs-12 col-sm-6 pro-content">
@@ -88,23 +64,17 @@
                             <hr class="producthr">
                         </ul>
                         <ul class="list-unstyled">
-                            <li class="text-decor-bold">
-                                <h2 class="pro-price">${{$info[0]->precio}}</h2>
-                            </li>
-                            <!--             <li>Ex Tax: $100.00</li>-->
+                            <ul class="list-inline">
+                                <li class="text-decor-bold">
+                                    <h2>Precio: ${{$info[0]->precio}}</h2>
+                                </li>
+
+                            </ul>
+
+
+
                         </ul>
                         <div id="product">
-                            <hr class="producthr">
-                            <h3>Available Options</h3>
-                            <div class="form-group required ">
-                                <label class="control-label text-decorop" for="input-option225">Delivery Date</label>
-                                <div class="input-group date">
-                                    <input type="text" name="option[225]" value="2011-04-22" data-date-format="YYYY-MM-DD" id="input-option225" class="form-control">
-                                    <span class="input-group-btn">
-                                        <button class="btn datebtn" type="button"><i class="fa fa-calendar"></i></button>
-                                    </span></div>
-                            </div>
-
                             <hr class="producthr">
                             <!-- Quantity option -->
                             <div class="form-group">
@@ -130,10 +100,11 @@
                                     </svg></button>
                                 <hr class="producthr">
                             </div>
-                            <!-- Quantity option end -->
+
                         </div>
                         <div class="rating">
-                            <li> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-1x"></i></span> </li>
+                            <h3>Formas de pago</h3>
+                            <img src="/images/paypalmercado.png" width="200px">
                             <hr class="producthr">
                             <!-- AddToAny BEGIN -->
                             <div class="a2a_kit a2a_kit_size_32 a2a_default_style" style="line-height: 32px;">
@@ -150,7 +121,7 @@
                                 <a class="a2a_button_linkedin" target="_blank" href="/#linkedin" rel="nofollow noopener"><span class="a2a_svg a2a_s__default a2a_s_linkedin" style="background-color: rgb(0, 123, 181);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                                             <path d="M6.227 12.61h4.19v13.48h-4.19V12.61zm2.095-6.7a2.43 2.43 0 0 1 0 4.86c-1.344 0-2.428-1.09-2.428-2.43s1.084-2.43 2.428-2.43m4.72 6.7h4.02v1.84h.058c.56-1.058 1.927-2.176 3.965-2.176 4.238 0 5.02 2.792 5.02 6.42v7.395h-4.183v-6.56c0-1.564-.03-3.574-2.178-3.574-2.18 0-2.514 1.7-2.514 3.46v6.668h-4.187V12.61z" fill="#FFF"></path>
                                         </svg></span><span class="a2a_label">LinkedIn</span></a>
-                                <a class="a2a_dd" href="https://www.addtoany.com/share#url=https%3A%2F%2Fmadebyhand.in%2Fopencart%2FFS03%2FFashion01%2Findex.php%3Froute%3Dproduct%2Fproduct%26path%3D20%26product_id%3D47&amp;title=Banana%20-%201%20kg"><span class="a2a_svg a2a_s__default a2a_s_a2a" style="background-color: rgb(1, 102, 255);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                                <a class="a2a_dd" href="https://www.addtoany.com/share#url=https%3A%2F%2Fmadebyhand.in%2Fopencart%2FFS03%2FFashion01%2Findex.php%3Froute%3Dproduct%2Fproduct%26path%3D20%26product_id%3D42&amp;title=Fresh%20Avocado"><span class="a2a_svg a2a_s__default a2a_s_a2a" style="background-color: rgb(1, 102, 255);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                                             <g fill="#FFF">
                                                 <path d="M14 7h4v18h-4z"></path>
                                                 <path d="M7 14h18v4H7z"></path>
@@ -165,109 +136,162 @@
                 </div>
                 <div class="product-tab">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab-description" data-toggle="tab" aria-expanded="true">Descripcion</a></li>
-
+                        <li class="active"><a href="#tab-description" data-toggle="tab">Descripción</a></li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane active" id="tab-description">
-                            <p>
-                                {{$info[0]->descripcion}}</p>
+
+                            <p> {{$info[0]->descripcion}}.</p>
+
                         </div>
-                        <div class="tab-pane" id="tab-specification">
-                            <table class="table table-bordered">
-                                <thead>
-                                    <tr>
-                                        <td colspan="2"><strong>Memory</strong></td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>test 1</td>
-                                        <td>16GB</td>
-                                    </tr>
-                                </tbody>
-                                <thead>
-                                    <tr>
-                                        <td colspan="2"><strong>Processor</strong></td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>No. of Cores</td>
-                                        <td>4</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="tab-pane" id="tab-review">
-                            <form class="" id="form-review">
-                                <div id="review">
-                                    <p>There are no reviews for this product.</p>
-                                </div>
-                                <h2 class="co-heading">Write a review</h2>
-                                <div class="form-group required row">
-                                    <div class="col-sm-12">
-                                        <label class="control-label" for="input-name">Your Name</label>
-                                        <input type="text" name="name" value="" id="input-name" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group required row">
-                                    <div class="col-sm-12">
-                                        <label class="control-label" for="input-review">Your Review</label>
-                                        <textarea name="text" rows="5" id="input-review" class="form-control"></textarea>
-                                        <!-- <div class="help-block"><span class="text-danger">Note:</span> HTML is not translated!</div> -->
-                                    </div>
-                                </div>
-                                <div class="form-group required">
-
-                                    <div class="radi">
-                                        <label class="control-label" for="input-review">Rating</label>
-                                        <div class="form-rating">
-
-                                            <div class="form-rating-container pull-left">
-                                                <input id="rating-5" type="radio" name="rating" value="5">
-                                                <label class="fa fa-stack pull-right" for="rating-5">
-                                                    <i class="fa fa-star fa-stack-5x"></i>
-                                                    <i class="fa fa-star-o fa-stack-5x"></i>
-                                                </label>
-                                                <input id="rating-4" type="radio" name="rating" value="4">
-                                                <label class="fa fa-stack pull-right" for="rating-4">
-                                                    <i class="fa fa-star fa-stack-5x"></i>
-                                                    <i class="fa fa-star-o fa-stack-5x"></i>
-                                                </label>
-                                                <input id="rating-3" type="radio" name="rating" value="3">
-                                                <label class="fa fa-stack pull-right" for="rating-3">
-                                                    <i class="fa fa-star fa-stack-5x"></i>
-                                                    <i class="fa fa-star-o fa-stack-5x"></i>
-                                                </label>
-                                                <input id="rating-2" type="radio" name="rating" value="2">
-                                                <label class="fa fa-stack pull-right" for="rating-2">
-                                                    <i class="fa fa-star fa-stack-5x"></i>
-                                                    <i class="fa fa-star-o fa-stack-5x"></i>
-                                                </label>
-                                                <input id="rating-1" type="radio" name="rating" value="1">
-                                                <label class="fa fa-stack pull-right" for="rating-1">
-                                                    <i class="fa fa-star fa-stack-5x"></i>
-                                                    <i class="fa fa-star-o fa-stack-5x"></i>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
 
 
-                                <div class="buttons clearfix">
-                                    <div class="pull-right">
-                                        <button type="button" id="button-review" data-loading-text="Loading..." class="btn btn-primary">Continue</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
                     </div>
                 </div>
                 <!-- relatedproduct -->
+
             </div>
         </div>
     </div>
 </div>
+@section('scripts')
+
+
+<script type="text/javascript"><!--
+$('#review').delegate('.pagination a', 'click', function(e) {
+    e.preventDefault();
+
+    $('#review').fadeOut('slow');
+
+    $('#review').load(this.href);
+
+    $('#review').fadeIn('slow');
+});
+
+$('#review').load('index.php?route=product/product/review&product_id=42');
+
+$('#button-review').on('click', function() {
+  $.ajax({
+    url: 'index.php?route=product/product/write&product_id=42',
+    type: 'post',
+    dataType: 'json',
+    data: $("#form-review").serialize(),
+    beforeSend: function() {
+      $('#button-review').button('loading');
+    },
+    complete: function() {
+      $('#button-review').button('reset');
+    },
+    success: function(json) {
+      $('.alert-dismissible').remove();
+
+      if (json['error']) {
+        $('#review').after('<div class="alert alert-danger alert-dismissible"><i class="fa fa-exclamation-circle"></i> ' + json['error'] + '</div>');
+      }
+
+      if (json['success']) {
+        $('#review').after('<div class="alert alert-success alert-dismissible"><i class="fa fa-check-circle"></i> ' + json['success'] + '</div>');
+
+        $('input[name=\'name\']').val('');
+        $('textarea[name=\'text\']').val('');
+        $('input[name=\'rating\']:checked').prop('checked', false);
+      }
+    }
+  });
+});
+
+$(document).ready(function() {
+  $('.thumbnails').magnificPopup({
+    type:'image',
+    delegate: 'a',
+    gallery: {
+      enabled: true
+    }
+  });
+});
+//--></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+    $("#related").owlCarousel({
+    itemsCustom : [
+    [0, 1],
+    [320, 2],
+    [600, 3],
+    [992, 4],
+    [1200, 4],
+    [1410, 5]
+    ],
+      // autoPlay: 1000,
+      navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+      navigation : true,
+      pagination:false
+    });
+    });
+</script>
+
+
+<script type="text/javascript"><!--
+$('#gallery_01').owlCarousel({
+  itemsCustom : [
+        [0, 2],
+        [320, 3],
+        [600, 5],
+        [768, 4],
+        [992, 4],
+        [1200, 4],
+        [1410, 4]
+        ],
+   autoPlay: 1000,
+  autoPlay: true,
+  navigation: false,
+  navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+  pagination: false
+});
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#owl-testi").owlCarousel({
+    itemsCustom : [
+    [0, 1]
+    ],
+      autoPlay: false,
+      navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+      navigation : false,
+      pagination:true
+    });
+    });
+
+  </script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#owl-testi").owlCarousel({
+    itemsCustom : [
+    [0, 1]
+    ],
+      autoPlay: false,
+      navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+      navigation : false,
+      pagination:true
+    });
+    });
+
+  </script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#owl-testi").owlCarousel({
+    itemsCustom : [
+    [0, 1]
+    ],
+      autoPlay: false,
+      navigationText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
+      navigation : false,
+      pagination:true
+    });
+    });
+
+  </script>
+@stop
 @stop

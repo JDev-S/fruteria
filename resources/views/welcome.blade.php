@@ -58,7 +58,7 @@
     <script src="\catalog\view\javascript\jquery\webiquickview.js" type="text/javascript"></script>
     <script src="\catalog\view\javascript\jquery\webinewsletter.js" type="text/javascript"></script>
     <script src="\catalog\view\javascript\common.js" type="text/javascript"></script>
-    @yield('scripts')
+  
     <link href="index.htm" rel="canonical">
     <link href="\image\catalog\favicon.png" rel="icon">
 </head>
@@ -846,6 +846,7 @@
                                 });
 
                             </script>
+                              @yield('scripts')
                         </aside>
                     </div>
                     <div class="col-md-3 col-sm-3 col-xs-12 fborder">
